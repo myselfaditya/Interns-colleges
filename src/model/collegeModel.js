@@ -15,15 +15,12 @@ const collageSchema = new mongoose.Schema({
         type: String,
         require: true,
         trim: true
-
     },
     isDeleted: {
         type: Boolean,
         default: false
     }
-
-
-
-}, { timestamps: true })
+}, 
+{ timestamps: true })
 
 module.exports = mongoose.model("Collage", collageSchema)

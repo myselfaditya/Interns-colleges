@@ -4,7 +4,7 @@ const collegeController=require('../controller/collegeController')
 const internController=require('../controller/internController')
 
 
-//this is the project about internship
+//This project is about Internship
 
 router.post('/functionup/colleges',collegeController.createCollege)
 

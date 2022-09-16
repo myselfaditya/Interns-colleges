@@ -1,6 +1,5 @@
 const collegeModel = require('../model/collegeModel')
 const internModel = require("../model/internModel")
-const mongoose = require('mongoose')
 
 const isValid = function (value) {
     if (typeof value === "undefined" || value === null) return false
@@ -55,11 +54,14 @@ const createIntern = async function (req, res) {
         const createData = await internModel.create(data)
         return res.status(201).send({ status: true, data: createData });
 
-    } catch (err) {
+    }
+     catch (err) {
         res.status(500).send({ status: false, msg: err.message })
     }
 }
+
 //========================getDetails===================================
+
 const getIntership = async function (req, res) {
     try {
         const collegeName = req.query.collegeName
@@ -78,7 +80,8 @@ const getIntership = async function (req, res) {
             interns: saveInterns
         }
         return res.status(200).send({ status: true, data: data });
-    } catch (error) {
+    } 
+    catch (error) {
         res.status(500).send({ status: false, messege: error.message })
     }
 }
